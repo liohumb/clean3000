@@ -1,0 +1,57 @@
+@use "src/assets/styles/Variables" as v;
+
+.single {
+  width: 100%;
+  height: 100%;
+  padding: 25vh 12.5%;
+
+  &__title {
+    font-family: v.$secondary-font;
+    font-size: 7rem;
+    text-align: center;
+    color: v.$light-color;
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: v.$light-color;
+    padding: 4rem;
+  }
+
+  &__content {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    font-size: 2rem;
+    color: v.$dark-color;
+  }
+
+  &__images {
+    width: 75%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    &-img {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      img {
+      }
+
+      span {
+        font-size: 2rem;
+      }
+    }
+  }
+}
