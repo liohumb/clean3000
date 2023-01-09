@@ -23,6 +23,29 @@
       align-items: center;
       gap: 4rem;
     }
+
+    &-button {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 1rem;
+      font-size: 2rem;
+      color: v.$first-color;
+      cursor: pointer;
+
+      &--icon {
+        position: absolute;
+        left: -10%;
+        opacity: 0;
+        transition: all .7s cubic-bezier(.5,-.75,.7,2);
+      }
+
+      &:hover &--icon {
+        left: 105%;
+        font-size: 4rem;
+        opacity: 1;
+      }
+    }
   }
 
   &__content {
