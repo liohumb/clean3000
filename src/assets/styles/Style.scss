@@ -1,0 +1,99 @@
+/* VARIABLES */
+@use "Variables" as v;
+
+/* FONTS */
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('../fonts/satoshi/Satoshi-Variable.woff2') format('woff2'),
+       url('../fonts/satoshi/Satoshi-Variable.woff') format('woff'),
+       url('../fonts/satoshi/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'savateregular';
+  src: url('../fonts/savate/savate-regular-webfont.eot');
+  src: url('../fonts/savate/savate-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/savate/savate-regular-webfont.woff2') format('woff2'),
+  url('../fonts/savate/savate-regular-webfont.woff') format('woff'),
+  url('../fonts/savate/savate-regular-webfont.ttf') format('truetype'),
+  url('../fonts/savate/savate-regular-webfont.svg#savateregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+/* DEFAULT */
+* {
+  margin: 0;
+  box-sizing: border-box;
+
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  font-family: v.$primary-font;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea {
+    &:focus {
+        outline: none;
+    }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
