@@ -1,7 +1,8 @@
-import './table.scss'
 import { Link } from 'react-router-dom'
 
-export default function Table() {
+import './table.scss'
+
+export default function Table(props) {
     const avis = JSON.parse(localStorage.getItem('avis')).reverse()
 
     return (
@@ -14,9 +15,9 @@ export default function Table() {
             </li>
             {avis.map( ( item ) => (
                 <li className="table__row" key={item.id}>
-                    <Link to="/avis-de-passage/:id" className="table__col table__col-name" data-label="Nom">{item.name}</Link>
-                    <Link to="/avis-de-passage/:id" className="table__col table__col-date" data-label="Date">{item.date}</Link>
-                    <Link to="/avis-de-passage/:id" className="table__col table__col-content" data-label="Observation">{item.content}</Link>
+                    <Link to={`/avis-de-passage/${item.id}`} className="table__col table__col-name" data-label="Nom">{item.name}</Link>
+                    <Link to={`/avis-de-passage/${item.id}`} className="table__col table__col-date" data-label="Date">{item.date}</Link>
+                    <Link to={`/avis-de-passage/${item.id}`} className="table__col table__col-content" data-label="Observation">{item.content}</Link>
                     <div className="table__col table__col-options">
                         <i className="bx bxs-edit table__col-edit"/>
                         <span> | </span>
