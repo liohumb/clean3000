@@ -13,6 +13,7 @@ export default function Form() {
     const [tech, setTech] = useState()
     const [user, setUser] = useState()
     const [cachet, setCachet] = useState(null)
+    const [active, setActive] = useState( false )
     const [data, setData] = useState( JSON.parse( localStorage.getItem( 'avis' ) ) || [] )
 
     const upload = ( e ) => {
@@ -37,6 +38,7 @@ export default function Form() {
 
         setTech(signOfTech)
         setUser(signOfUser)
+        setActive(true)
     }
 
     const addToAvis = ( e ) => {
@@ -106,13 +108,17 @@ export default function Form() {
                     </div>
                 </div>
             </div>
-            <div className="form__contents">
-                <button className="form__contents-button" onClick={addSign}>
-                    <i className="bx bxs-pen form__contents-button--icon"></i>
+            <div className="form__infos">
+                <button className="form__infos-button" onClick={addSign}>
+                    <i className="bx bxs-pen form__infos-button--icon"></i>
                     sauvegarder les signatures
                 </button>
+                <span className={`form__infos-instruction ${active && 'form__infos-instruction--active'}`}>
+                    <i className="bx bx-up-arrow-alt bx-tada"/>
+                    Vous devez sauvegarder les signatures avant de pouvoir valider cet avis de passage.
+                </span>
             </div>
-            <button className="form__button" type="submit">Valider</button>
+            <button className={`form__button ${active && 'form__button-active'}`} type="submit">Valider</button>
         </form>
     )
 }
