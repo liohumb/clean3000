@@ -1,0 +1,104 @@
+@use "src/assets/styles/Variables" as v;
+
+.form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  padding: 25vh 0;
+
+  &__contents {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5%;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 4rem;
+    }
+  }
+
+  &__content {
+    width: 100%;
+    height: 100%;
+
+    &-input {
+      width: 100%;
+      height: 5rem;
+      font-size: 2rem;
+      color: v.$light-color;
+      background: transparent;
+      border: .2rem solid v.$first-color;
+      border-radius: .5rem;
+      padding: 0 1rem;
+      
+      &::placeholder {
+        color: v.$first-color;
+      }
+    }
+
+    &-textarea {
+      width: 100%;
+      height: 20rem;
+      font-size: 2rem;
+      color: v.$light-color;
+      background: transparent;
+      border: .2rem solid v.$first-color;
+      border-radius: .5rem;
+      resize: none;
+      padding: 1rem 1.5rem;
+
+      &::placeholder {
+        color: v.$first-color;
+      }
+    }
+    
+    &-label {
+      font-size: 2.25rem;
+      color: v.$first-color;
+      padding: 1rem;
+
+      label {
+        border-bottom: .2rem solid v.$first-color;
+        cursor: pointer;
+        padding: .25rem 0;
+      }
+    }
+
+    &-file {
+      display: none;
+    }
+
+    &-draw {
+      width: 100% !important;
+      height: 20rem !important;
+      border: .2rem solid v.$first-color;
+      border-radius: .5rem;
+    }
+  }
+
+  &__button {
+    font-family: v.$secondary-font;
+    font-size: 3.25rem;
+    color: v.$alt-color;
+    border-top: .2rem solid v.$alt-color;
+    border-bottom: .2rem solid v.$alt-color;
+    cursor: pointer;
+    transition: all .4s linear;
+    margin: 4rem;
+
+    &:hover {
+      letter-spacing: .1rem;
+      color: v.$light-color;
+      border-top: .2rem solid v.$light-color;
+      border-bottom: .2rem solid v.$light-color;
+    }
+  }
+}
