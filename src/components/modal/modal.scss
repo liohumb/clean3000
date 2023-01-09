@@ -1,0 +1,39 @@
+@use "src/assets/styles/Variables" as v;
+
+.modal {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: v.$dark-color;
+  transition: all .7s cubic-bezier(.51,.92,.24,1.15);
+  z-index: 1;
+
+  &__active {
+    top: 0;
+    transition: all .7s cubic-bezier(.51,.92,.24,1.15);
+  }
+
+  &__menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    text-align: center;
+
+    &-link {
+      font-family: v.$secondary-font;
+      font-size: 4rem;
+      color: v.$light-color;
+      letter-spacing: .2rem;
+    }
+  }
+}
