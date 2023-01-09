@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import logo from '../../assets/images/logo-mini.png'
 
 import './nav.scss'
@@ -7,6 +7,7 @@ import Modal from '../../components/modal/Modal'
 
 export default function Nav() {
     const [active, setActive] = useState( false )
+    const location= useLocation()
 
     const toggleMenu = () => {
         if (active) {
@@ -15,6 +16,8 @@ export default function Nav() {
             setActive(true)
         }
     }
+
+    if (location.pathname === "/") return null
 
     return (
         <>
