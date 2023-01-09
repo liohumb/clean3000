@@ -1,0 +1,103 @@
+@use "src/assets/styles/Variables" as v;
+
+.table {
+  width: 100%;
+  height: 100%;
+
+  &__header,
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: .5rem;
+    margin: 0 0 2.5rem 0;
+    padding: 2.5rem 3rem;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__header {
+    font-family: v.$secondary-font;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    background: v.$first-color;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__row {
+    font-size: 1.75rem;
+    background: v.$light-color;
+  }
+
+  &__col {
+    padding: 0 .75rem;
+
+    @media (max-width: 768px) {
+      display: flex;
+      flex-basis: 100%;
+      padding: 1rem 0;
+
+      &:before {
+        content: attr(data-label);
+        flex-basis: 50%;
+        color: v.$first-color;
+        text-align: right;
+        padding: 0 1rem 0 0;
+      }
+    }
+
+    &-name {
+      flex-basis: 20%;
+    }
+
+    &-date {
+      flex-basis: 20%;
+    }
+
+    &-content {
+      flex-basis: 50%;
+
+      @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+
+        &:before {
+          text-align: center;
+          padding: 0 0 1rem 0;
+        }
+      }
+    }
+
+    &-options {
+      display: flex;
+      flex-basis: 10%;
+      align-items: center;
+      justify-content: center;
+      gap: 5%;
+      font-size: 2.75rem;
+      text-align: center;
+
+      @media (max-width: 768px) {
+        justify-content: flex-start;
+      }
+
+      span {
+        opacity: .25;
+      }
+    }
+
+    &-edit {
+      color: v.$first-color;
+    }
+
+    &-delete {
+      color: v.$alert-color;
+    }
+  }
+}
